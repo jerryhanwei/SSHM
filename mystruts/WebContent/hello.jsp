@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- hello struts
+ hello ${myname}
 </body>
 </html>

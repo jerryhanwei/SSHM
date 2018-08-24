@@ -7,7 +7,10 @@
 </head>
 <body>
 
-    <a href="helloAction.action">execute默认方法访问</a>
+    <a href="myindex.action">execute默认方法访问</a>
     <a href="myspeak.action">固定方法访问</a>
+        <a href="myindex!mydongtai.action">动态方法访问 !</a>
+        <a href="mymix_mix.action">动态方法模糊访问 !</a>
+        
 </body>
 </html>

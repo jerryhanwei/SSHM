@@ -8,4 +8,12 @@ public class TestAction extends ActionSupport{
 		System.out.println("到了 固定方法 method");
 		return "gotoHelloPage";
 	}
+	
+	public String dongtai()
+	{
+		System.out.println("到了 动态方法 method");
+		return "gotoHelloPage";
+	}
+	
+	
 }

@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0063)http://www.cnblogs.com/yangy608/archive/2010/11/08/1871958.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./Struts2动态方法调用 - 七郎 - 博客园_files/analytics.js"></script>
+
+<title>Struts2动态方法调用 - 七郎 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./Struts2动态方法调用 - 七郎 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./Struts2动态方法调用 - 七郎 - 博客园_files/bundle-summerGarden.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/yangy608/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/yangy608/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/yangy608/wlwmanifest.xml">
+<script async="" type="text/javascript" src="./Struts2动态方法调用 - 七郎 - 博客园_files/gpt.js"></script><script src="./Struts2动态方法调用 - 七郎 - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'yangy608', cb_enable_mathjax=false;</script>
+<script src="./Struts2动态方法调用 - 七郎 - 博客园_files/blog-common.js" type="text/javascript"></script>
+<script async="" type="text/javascript" src="./Struts2动态方法调用 - 七郎 - 博客园_files/pubads_impl_47.js"></script><script type="text/javascript" src="./Struts2动态方法调用 - 七郎 - 博客园_files/osd.js"></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/yangy608/"><img id="blogLogo" src="./Struts2动态方法调用 - 七郎 - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/yangy608/">七郎's Blog</a></h1>
+<h2>草木竹石皆可為劒。至人之用人若鏡，不將不迎，應而不藏，故能勝物而不傷。</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+	<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/yangy608/">首页</a></li>
+	<li><a href="http://news.cnblogs.com/">新闻</a></li>
+	<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://space.cnblogs.com/msg/send/%e4%b8%83%e9%83%8e">联系</a></li>
+	<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+	<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/yangy608/rss">订阅</a>
+	<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/yangy608/rss"><img src="./Struts2动态方法调用 - 七郎 - 博客园_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 196&nbsp;
+文章- 1&nbsp;
+评论- 1&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="./Struts2动态方法调用 - 七郎 - 博客园_files/Struts2动态方法调用 - 七郎 - 博客园.htm">Struts2动态方法调用</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span style="font-size: 12pt;">动态方法调用<br>在Struts2中动态方法调用有三种方式,动态方法调用就是为了解决一个Action对应多个请求的处理,以免Action太多</span></p>
+<p><span style="font-size: 12pt;">第一种方式:指定method属性<br>这种方式我们前面已经用到过,类似下面的配置就可以实现<br>&lt;action name="chainAction" class="chapter2.action.Chapter2Action"<br>method="chainAction"&gt;<br>&lt;result name="chainAction" type="chain"&gt;redirect&lt;/result&gt;<br>&lt;/action&gt;&nbsp;&nbsp;<br>&lt;action name="plainText" class="chapter2.action.Chapter2Action"<br>method="plainText"&gt;<br>&lt;result name="plainText" type="plainText"&gt;/WEB-INF/JspPage/chapter2/plaintext.jsp&lt;/result&gt;<br>&lt;/action&gt; </span></p>
+<p><span style="font-size: 12pt;">第二种方式:感叹号方式(需要开启),官网不推荐使用这种方式,建议大家不要使用.<br>用这种方式需要先开启一个开关<br>&lt;constant name="struts.enable.DynamicMethodInvocation" value="true" /&gt; <br>将此常量设置为true,这种方式才能使用,使用见示例<br>Action<br>package chapter3.action;</span></p>
+<p><span style="font-size: 12pt;">public class Chapter3Action {<br>public String result1(){<br>&nbsp;&nbsp; return "result1";<br>}<br><br>public String result2(){<br>&nbsp;&nbsp; return "result2";<br>}<br>} </span></p>
+<p><span style="font-size: 12pt;">Jsp中访问方式<br>&lt;body&gt;<br>&nbsp;&nbsp;&nbsp; &lt;a href="${basePath}/chapter3/chapter3Action!result1"&gt;result1&lt;/a&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp; &lt;a href="${basePath}/chapter3/chapter3Action!result2"&gt;result2&lt;/a&gt;&lt;br&gt;<br>&lt;/body&gt; <br>如果配置了后缀,必须这样写:<br>/chapter4/chapter4Action!create.action<br>XML中配置方式<br>&lt;package name="chapter3" namespace="/chapter3" extends="struts-default"&gt;<br>&nbsp;&nbsp; &lt;action name="chapter3Action" class="chapter3.action.Chapter3Action"&gt;<br>&nbsp;&nbsp;&nbsp; &lt;result name="result1"&gt;/WEB-INF/JspPage/chapter3/result1.jsp&lt;/result&gt;<br>&nbsp;&nbsp;&nbsp; &lt;result name="result2"&gt;/WEB-INF/JspPage/chapter3/result2.jsp&lt;/result&gt;<br>&nbsp;&nbsp;&nbsp; &lt;result name="chapter3"&gt;/WEB-INF/JspPage/chapter3/chapter3.jsp&lt;/result&gt;<br>&nbsp;&nbsp; &lt;/action&gt;<br>&lt;/package&gt; </span></p>
+<p><span style="font-size: 12pt;">第三种方式:通配符方式(官网推荐使用)<br>首先得关闭开关<br>&lt;constant name="struts.enable.DynamicMethodInvocation" value="false" /&gt; <br>这一种方式是由第一种转变过来的,我们可以看到,第一种方式有很多重复的代码,那么我们可以进行变形,看下面的代码<br>&lt;action name="chapter3_*" class="chapter3.action.Chapter3Action"<br>method="{1}"&gt;<br>&lt;result name="test"&gt;/…/test.jsp&lt;/result&gt;<br>&lt;/action&gt; <br>chapter3_*这里的*就是你呆会要匹配的字符串,即你在后面的请求中得这样写<br></span><a href="http://...../"><span style="font-size: 12pt;">http://...../</span></a><span style="font-size: 12pt;"> chapter3_create 或 </span><a href="http://...../"><span style="font-size: 12pt;">http://...../</span></a><span style="font-size: 12pt;"> chapter3_update<br>注意,这时你action中必须有create和update方法与之匹配,甚至还可以这样匹配<br>&lt;action name="chapter3_*" class="chapter3.action.Chapter3Action"<br>method="{1}"&gt;<br>&lt;result name="test"&gt;/…/{1}.jsp&lt;/result&gt;<br>&lt;/action&gt; <br>但是这时一定要有对应的JSP页面存在,并且相应的路径不能错,这就对我们的命名进行了强制性的规定,一定要规范.</span></p>
+<p><span style="font-size: 12pt;">课堂示例:<br>Action<br>public class Chapter4Action extends ActionSupport {<br>public String list(){<br>&nbsp;&nbsp; return "list";<br>}<br><br>public String create(){<br>&nbsp;&nbsp; return "create";<br>}<br><br>public String index(){<br>&nbsp;&nbsp; return "index";<br>}<br>} <br>XML:<br>&lt;action name="chapter4_*" class="chapter4.action.Chapter4Action" method="{1}"&gt;<br>&nbsp;&nbsp;&nbsp; &lt;result name="{1}"&gt;/WEB-INF/JspPage/chapter4/chapter4_{1}.jsp&lt;/result&gt;<br>&lt;/action&gt; </span></p>
+<p><br><span style="font-size: 12pt;">访问Servlet API<br>有时我们需要用到Request, Response, Session,Page, ServletContext这些我们以前常用的对象,那么在Struts2中怎么样使用到这些对象呢,通常有三种方式.<br>间接访问1<br>//向Session中放<br>&nbsp;&nbsp; ActionContext.getContext().getSession().put("wdpc", "Session中的WDPC");<br>&nbsp;&nbsp;<br>&nbsp;&nbsp; //向request中放<br>&nbsp;&nbsp; ActionContext.getContext().put("wdpc","request中的WDPC");<br>&nbsp;&nbsp;<br>&nbsp;&nbsp; //向application中放<br>&nbsp;&nbsp; ActionContext.getContext().getApplication().put("wdpc", "Application中的WDPC");<br>&nbsp;&nbsp;&nbsp;<br>取值方式:<br>ActionContext.getContext().getSession().get("wdpc");<br>间接访问2</span></p>
+<p><br><span style="font-size: 12pt;">Struts2中提供了一个静态类,他里面的方法可以获取到我们的HttpServletResponse, HttpServletRequest, 然后呢就可以还原到我们以前的使用方式了. </span></p>
+<p><span style="font-size: 12pt;">直接访问<br>虽然Struts2提供了ActionContext来访问Servlet API,但是这种方式毕竟不能直接获取Servelt API实例,为了在Action中直接访问Servlet API,Struts2还提供了一系列接口<br>ServletContextAware&nbsp;&nbsp; 实现此接口后,可以取得ServletContext<br>ServletRequestAware&nbsp;&nbsp; 实现此接口后,可以取得HttpServletRequest<br>ServletResponseAware 实现此接口后,可以取得HttpServletResponse<br>SessionAware&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 实现此接口后,可以取得HttpSession,注意,这里有点特殊,取得的是一个Map&lt;String,Object&gt; session,拦截器负责将session中存储的键值进行解析,并一一对应. </span></p>
+<p><span style="font-size: 12pt;">所以我们通常的做法是:<br>public class BaseAction implements ServletResponseAware, ServletRequestAware,<br>&nbsp;&nbsp; SessionAware {</span></p>
+<p><span style="font-size: 12pt;">protected HttpServletResponse response;<br>protected HttpServletRequest request;<br>protected Map&lt;String, Object&gt; session;</span></p>
+<p><span style="font-size: 12pt;">public void setServletResponse(HttpServletResponse response) {<br>&nbsp;&nbsp; this.response = response;<br>}</span></p>
+<p><span style="font-size: 12pt;">public void setServletRequest(HttpServletRequest request) {<br>&nbsp;&nbsp; this.request = request;<br>}</span></p>
+<p><span style="font-size: 12pt;">public void setSession(Map&lt;String, Object&gt; session) {<br>&nbsp;&nbsp; this.session = session;<br>}</span></p>
+<p><span style="font-size: 12pt;">public HttpServletResponse getResponse() {<br>&nbsp;&nbsp; return response;<br>}</span></p>
+<p><span style="font-size: 12pt;">public void setResponse(HttpServletResponse response) {<br>&nbsp;&nbsp; this.response = response;<br>}</span></p>
+<p><span style="font-size: 12pt;">public HttpServletRequest getRequest() {<br>&nbsp;&nbsp; return request;<br>}</span></p>
+<p><span style="font-size: 12pt;">public void setRequest(HttpServletRequest request) {<br>&nbsp;&nbsp; this.request = request;<br>}</span></p>
+<p><span style="font-size: 12pt;">public Map&lt;String, Object&gt; getSession() {<br>&nbsp;&nbsp; return session;<br>}<br>} </span></p>
+<p><span style="font-size: 12pt;">为了让BaseAction能有验证的功能,并且不能被实例化,开发中我们会这样做:<br>public abstract class BaseAction extends ActionSupport implements<br>ServletResponseAware, ServletRequestAware, SessionAware <br>然后让我们每个模块的Action来继承这个BaseAction类,然后我们就可以在Action中直接使用Servelt的API了.</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+绿色通道：
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1871958,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://space.cnblogs.com/msg/send/%e4%b8%83%e9%83%8e" target="_blank">与我联系</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Struts2动态方法调用 - 七郎 - 博客园_files/icon_weibo_24.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/yangy608/" target="_blank"><img src="./Struts2动态方法调用 - 七郎 - 博客园_files/u44229.jpg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/yangy608/">七郎</a><br>
+<a href="http://home.cnblogs.com/u/yangy608/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/yangy608/followers">粉丝 - 41</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1871958,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">3</span>
+    </div>
+	<div class="buryit" onclick="votePost(1871958,&#39;Bury&#39;)"> 
+		<span class="burynum" id="bury_count">1</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/yangy608/archive/2010/09/07/1820788.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/yangy608/archive/2010/09/07/1820788.html" title="发布于2010-09-07 17:00">case when then end</a><br><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871962.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871962.html" title="发布于2010-11-08 17:46">Struts2配置文件讲解</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2010-11-08 17:42</span> <a href="http://www.cnblogs.com/yangy608/">七郎</a> 阅读(<span id="post_view_count">15741</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1871958" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871958.html#" onclick="AddToWz(1871958);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=false,isLogined=false,cb_blogId=47813,cb_entryId=1871958,cb_blogApp=currentBlogApp,cb_blogUserGuid='7e01470b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2010/11/8 17:42:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+<a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871958.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871958.html#top">返回顶部</a></div>
+<div id="comment_form_container">（评论功能已被禁用）</div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.imooc.com/view/120?from=cnblogs" target="_blank">【免费课程】案例：Tooltip浮动提示框效果</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = true;var googletag = googletag || {};googletag.cmd = googletag.cmd || [];
+    fixPostBodyFormat();
+</script>
+<div id="ad_under_post_holder">
+<script type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +'//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+<script type="text/javascript">
+    try {
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1346480159711-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id="div-gpt-ad-1346480159711-0" style="width:300px; height:250px;">
+    <script type="text/javascript">
+    try{
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1346480159711-0'); });
+    } catch (e) { }
+    </script>
+    <div id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" name="google_ads_iframe_/1090369/cnblogs_blogpost_C1_sitehome_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div>
+</div>
+</div>
+<div id="blog_news_kb"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/502107/" target="_blank">Android设备碎片化愈演愈烈 全球一年骤增58%</a><br> ·  <a href="http://news.cnblogs.com/n/502106/" target="_blank">高通同意就涉嫌违法行为作出改进</a><br> ·  <a href="http://news.cnblogs.com/n/502105/" target="_blank">把扔垃圾变成一种游戏，Tetrabin 做到了</a><br> ·  <a href="http://news.cnblogs.com/n/502104/" target="_blank">谁说女子不如男：女性更爱玩游戏？</a><br> ·  <a href="http://news.cnblogs.com/n/502103/" target="_blank">百度为何要做无人驾驶？布局下一代地图</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/502002/" target="_blank">有关云架构建设和选型的思考</a><br> ·  <a href="http://kb.cnblogs.com/page/500844/" target="_blank">程序员生存定律-打造属于自己的稀缺性</a><br> ·  <a href="http://kb.cnblogs.com/page/501814/" target="_blank">防止代码变质的思考与方法</a><br> ·  <a href="http://kb.cnblogs.com/page/121419/" target="_blank">千万别用MongoDB？真的吗？！</a><br> ·  <a href="http://kb.cnblogs.com/page/501480/" target="_blank">花十分钟做计划，一天工作效率高</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    $.ajax({ url: 'http://counter.cnblogs.com/blog/post/' + cb_entryId, type: 'get', dataType: 'script', cache: true });
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/yangy608/">七郎</a><br>园龄：<a href="http://home.cnblogs.com/u/yangy608/" title="入园时间：2008-11-18">5年9个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/yangy608/followers/">41</a><br>关注：<a href="http://home.cnblogs.com/u/yangy608/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger(&#39;7e01470b-63cf-dd11-9e4d-001cf0cd104b&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="日历">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2010/10/01&#39;);return false;">&lt;</a></td><td align="center">2010年11月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2010/12/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08.html"><u>8</u></a></td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/09.html"><u>9</u></a></td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/10.html"><u>10</u></a></td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/14.html"><u>14</u></a></td><td align="center">15</td><td align="center">16</td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/17.html"><u>17</u></a></td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/22.html"><u>22</u></a></td><td align="center"><a href="http://www.cnblogs.com/yangy608/archive/2010/11/23.html"><u>23</u></a></td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td></tr><tr><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td><td class="CalOtherMonthDay" align="center">11</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+<div class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+
+
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/yangy608/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/yangy608/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/yangy608/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/yangy608/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/yangy608/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871958.html#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div>
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(17)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/yangy608/category/166532.html">Ant(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/yangy608/category/326553.html">encache(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/yangy608/category/326555.html">hibernate</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/yangy608/category/326556.html">hibernatesearch</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/yangy608/category/166517.html">IBM(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/yangy608/category/166518.html">Java(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/yangy608/category/349077.html">Jquery(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/yangy608/category/166531.html">Junit(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/yangy608/category/326557.html">maven</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/yangy608/category/400686.html">oracle(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/yangy608/category/166521.html">Other(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/yangy608/category/166909.html">Report(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/yangy608/category/326554.html">spring</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/yangy608/category/166519.html">Thought(1)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(196)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/yangy608/archive/2014/08.html">2014年8月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/yangy608/archive/2014/03.html">2014年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/yangy608/archive/2013/12.html">2013年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/yangy608/archive/2013/10.html">2013年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/yangy608/archive/2013/09.html">2013年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/yangy608/archive/2013/08.html">2013年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/yangy608/archive/2013/07.html">2013年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/yangy608/archive/2013/05.html">2013年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/yangy608/archive/2013/04.html">2013年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/yangy608/archive/2013/03.html">2013年3月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/yangy608/archive/2013/02.html">2013年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/yangy608/archive/2013/01.html">2013年1月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/yangy608/archive/2012/12.html">2012年12月 (16)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/yangy608/archive/2012/11.html">2012年11月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/yangy608/archive/2012/10.html">2012年10月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/yangy608/archive/2012/09.html">2012年9月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/yangy608/archive/2012/08.html">2012年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/yangy608/archive/2012/07.html">2012年7月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/yangy608/archive/2012/06.html">2012年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/yangy608/archive/2012/05.html">2012年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/yangy608/archive/2012/04.html">2012年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/yangy608/archive/2012/03.html">2012年3月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/yangy608/archive/2012/02.html">2012年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/yangy608/archive/2012/01.html">2012年1月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/yangy608/archive/2011/12.html">2011年12月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/yangy608/archive/2011/11.html">2011年11月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/yangy608/archive/2011/10.html">2011年10月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/yangy608/archive/2011/09.html">2011年9月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/yangy608/archive/2011/08.html">2011年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/yangy608/archive/2011/07.html">2011年7月 (17)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/yangy608/archive/2011/06.html">2011年6月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/yangy608/archive/2011/01.html">2011年1月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/yangy608/archive/2010/12.html">2010年12月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/yangy608/archive/2010/11.html">2010年11月 (18)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/yangy608/archive/2010/09.html">2010年9月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/yangy608/archive/2010/07.html">2010年7月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/yangy608/archive/2010/06.html">2010年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/yangy608/archive/2009/06.html">2009年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/yangy608/archive/2008/12.html">2008年12月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/yangy608/archive/2008/11.html">2008年11月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+<div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871962.html">1. Struts2配置文件讲解(40871)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2011/01/22/1942099.html">2. MySQL权限分配(21648)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2010/11/14/1876833.html">3. &lt;aop:config&gt;(21232)</a></li><li><a href="./Struts2动态方法调用 - 七郎 - 博客园_files/Struts2动态方法调用 - 七郎 - 博客园.htm">4. Struts2动态方法调用(15741)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2011/09/14/2175521.html">5. jstl fmt:formatdate转载(12244)</a></li></ul></div>
+</div>
+</div><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/yangy608/archive/2010/11/08/1871962.html">1. Struts2配置文件讲解(8)</a></li><li><a href="./Struts2动态方法调用 - 七郎 - 博客园_files/Struts2动态方法调用 - 七郎 - 博客园.htm">2. Struts2动态方法调用(3)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2008/12/03/1346796.html">3. 单元测试利器JUnit4(2)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2010/11/22/1884396.html">4. JQuery ajax json(1)</a></li><li><a href="http://www.cnblogs.com/yangy608/archive/2010/11/14/1876833.html">5. &lt;aop:config&gt;(1)</a></li></ul></div>
+</div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2014 七郎
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<iframe id="google_osd_static_frame_8510797976050" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

@@ -5,12 +5,20 @@
 
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
 
     <package name="default" namespace="/" extends="struts-default">
 
 	
         <action name="myspeak" class="com.my.action.TestAction" method="speak">
+	    <result name="gotoHelloPage">hello.jsp</result>
+	</action>
+	
+	 <action name="myindex" class="com.my.action.JumpAction" >
+	    <result name="gotoHelloPage">hello.jsp</result>
+	</action>
+	
+	<action name="mymix_*" class="com.my.action.MixAction"  method="{1}">
 	    <result name="gotoHelloPage">hello.jsp</result>
 	</action>
         
