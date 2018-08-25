@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.isoft.model.MyUser"  table="t_user">
+	   <id name="uid" type="java.lang.String" column="t_uid">
+	        <generator class="assigned"></generator>
+	   </id>
+	   
+      <property name="upwd" type="java.lang.String">
+		  <column name="t_pwd" length="30" not-null="true"></column>
+		</property>
+		
+		<property name="userName" type="java.lang.String">
+		  <column name="t_uname"  length="30" not-null="true"></column>
+		</property>
+	   
+	</class>
+
+
+</hibernate-mapping>

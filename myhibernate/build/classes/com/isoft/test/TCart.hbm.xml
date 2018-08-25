@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-18 14:23:37 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.isoft.test.TCart" table="t_cart" catalog="shop_mobile">
+        <id name="TCartId" type="string">
+            <column name="t_cart_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TProductId" type="string">
+            <column name="t_product_id" length="50" />
+        </property>
+        <property name="TNum" type="string">
+            <column name="t_num" length="20" />
+        </property>
+        <property name="TUserId" type="string">
+            <column name="t_user_id" length="50" />
+        </property>
+        <property name="TStatus" type="string">
+            <column name="t_status" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

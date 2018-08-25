@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-4-18 14:23:37 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.isoft.test.TProduct" table="t_product" catalog="shop_mobile">
+        <id name="TProductId" type="string">
+            <column name="t_product_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TProductName" type="string">
+            <column name="t_product_name" length="50" />
+        </property>
+        <property name="TProductType" type="string">
+            <column name="t_product_type" length="50" />
+        </property>
+        <property name="TDiscount" type="string">
+            <column name="t_discount" length="50" />
+        </property>
+        <property name="TImgUrl" type="string">
+            <column name="t_img_url" length="50" />
+        </property>
+        <property name="TBrand" type="string">
+            <column name="t_brand" length="50" />
+        </property>
+        <property name="TPrice" type="string">
+            <column name="t_price" length="50" />
+        </property>
+        <property name="TInfo" type="string">
+            <column name="t_info" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
